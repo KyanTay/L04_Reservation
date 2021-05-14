@@ -10,4 +10,5 @@
     <string name="rbSmoking">Smoking</string>
     <string name="rbNonSmoking">Non-Smoking</string>
     <string name="btnReserve">Reserve</string>
+    <string name="btnReset">Reset</string>
 </resources>

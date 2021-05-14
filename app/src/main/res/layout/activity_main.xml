@@ -116,6 +116,7 @@
             android:layout_gravity="center"/>
 
         <RadioGroup
+            android:id="@+id/rgTablePreference"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -134,10 +135,26 @@
         </RadioGroup>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnReserve"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btnReserve" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnReserve"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btnReserve"
+            android:layout_marginLeft="225px"/>
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/btnReset"
+            android:layout_marginLeft="150px"
+            />
+    </LinearLayout>
 
 </LinearLayout>
