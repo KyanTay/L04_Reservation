@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">L04_Reservation</string>
+    <string name="tvName">Name:</string>
+    <string name="etName">Enter name</string>
+    <string name="tvMobileNumber">Mobile Number</string>
+    <string name="tvGroupSize">Group Size</string>
+    <string name="tvTime">Time</string>
+    <string name="tvDate">Date</string>
+    <string name="tvTablePreference">Table preference</string>
+    <string name="rbSmoking">Smoking</string>
+    <string name="rbNonSmoking">Non-Smoking</string>
+    <string name="btnReserve">Reserve</string>
+</resources>
