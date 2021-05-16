@@ -12,6 +12,9 @@ import android.widget.RadioGroup;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import java.sql.Time;
+import java.util.Calendar;
+
 public class MainActivity extends AppCompatActivity {
     EditText etName;
     EditText etPhoneNumber;
@@ -40,14 +43,18 @@ public class MainActivity extends AppCompatActivity {
         btnReserve = findViewById(R.id.btnReserve);
         btnReset = findViewById(R.id.btnReset);
 
-        datePicker.updateDate(2020,5,1);
+
+        Calendar thisCalendar = Calendar.getInstance();
+        int currentYear = thisCalendar.get(thisCalendar.YEAR);
+        int currentMonth = thisCalendar.get(thisCalendar.MONTH);
+        int currentDay = thisCalendar.get(thisCalendar.DAY_OF_MONTH);
+
+        datePicker.updateDate(currentYear,currentMonth,currentDay + 1);
         timePicker.setCurrentHour(19);
         timePicker.setCurrentMinute(30);
+        datePicker.setMinDate(System.currentTimeMillis()+86400000);
 
-        int minHour = 8;
-        int maxHour = 20;
-        int minMin = 0;
-        int maxMin = 59;
+
 
         btnReserve.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,8 +94,9 @@ public class MainActivity extends AppCompatActivity {
         timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
             public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
-                if(hourOfDay >= minHour || hourOfDay <= maxHour && minute >= minMin || minute <= maxHour) {
-                    Toast.makeText(MainActivity.this, "Thanks for booking", Toast.LENGTH_SHORT).show();
+                if(hourOfDay < 8 || hourOfDay > 20 ){
+                    timePicker.setCurrentHour(20);
+                    timePicker.setCurrentMinute(0);
                 }
             }
         });
